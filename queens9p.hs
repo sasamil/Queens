@@ -1,4 +1,14 @@
-import Data.List -- just because of \\
+-- The raw solution for the derived problem of placing 1 pown and 9 queens on a 8X8 chessboard so that no two queens 
+-- threaten each other.
+
+-- There are 64 independant solution and they can be listed by "filterout queens9p". 
+
+-- There are 128 dependent solutions. It's about solutions which are basicly same but isometrically transformed (rotation
+-- or reflection). They can be listed by "queens9p" function.
+
+-- This file also contain a set of set of auxiliary functions for detecting and filtering out the dependent solutions.
+
+import Data.List 
 
 type Pos = (Int,Int)
 type Comb = (Pos,[Pos])
@@ -35,19 +45,14 @@ unrelated3 func p y [] = True
 unrelated3 func p y (x:xs) =  if func p y x then False else unrelated3 func p y xs 
 
 
-queens9p = nub queens2
+queens9p = nub queens
 
 -------------------------------------------------------
--- 128 dependant and 16 independant solutions
--- column qpq, row qpq
--- (x,y) pown; (x1,y1),(x2,y2) column related queens; (x3,y3),(x4,y4) row relate dqueens; 
--- (x5,y5),(x6,y6),(x7,y7),(x8,y8),(x9,y9) independant queens
--- the same result as queens1 but - about 2X better performance
-queens2 = [((x,y), sort [(x1,y1),(x2,y2),(x3,y3),(x4,y4), (x5,y5),(x6,y6),(x7,y7),(x8,y8),(x9,y9)]) | 
+queens = [((x,y), sort [(x1,y1),(x2,y2),(x3,y3),(x4,y4), (x5,y5),(x6,y6),(x7,y7),(x8,y8),(x9,y9)]) | 
   x  <- [2..7], y  <- [2..7],
    
-  x1 <- [x], y1 <- [1..y-1], -- x1==x, y1<y
-  x2 <- [x], y2 <- [y+1..8], -- x2==x, y2>y
+  x1 <- [x], y1 <- [1..y-1], 
+  x2 <- [x], y2 <- [y+1..8], 
   
   y3 <- [y], x3 <- [1..x-1], not $ diag_related2 (x3,y3) (x1,y1), not $ diag_related2 (x3,y3) (x2,y2),
   y4 <- [y], x4 <- [x+1..8], not $ diag_related2 (x4,y4) (x1,y1), not $ diag_related2 (x4,y4) (x2,y2),

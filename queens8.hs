@@ -1,3 +1,12 @@
+-- The raw solution for the old problem of placing 8 queens on a 8X8 chessboard so that no two queens threaten each other.
+
+-- There are 12 independant solution and they can be listed by the "queens8ind" function. 
+
+-- There are 92 dependent solutions. It's about solutions which are basicly same but isometrically transformed (rotation
+-- or reflection). They can be listed by "queens8" function.
+
+-- This file also contain a set of set of auxiliary functions for detecting and filtering out the dependent solutions.
+
 import Data.List -- just because of \\
 
 type Pos = (Int,Int)
@@ -19,8 +28,9 @@ unrelate y (x:xs) =  if y `diagrelate` x then False else unrelate y xs
 
 -------------------------------------------------------
 -- list of all good permutations
--- (with a<-[5..8] we would get transformed but analogue permutations)
-perms8 = [[a,b,c,d,e,f,g,h] | a <- [1..4], 
+-- (with a<-[1..4] we would get better erformance but only 'lower' 46 of all 92 solutions. 
+-- It would be correct, anyway i.e. it would yield the same set of independant solutions.)
+perms8 = [[a,b,c,d,e,f,g,h] | a <- [1..8], 
                               b <- [1..8] \\ [a], unrelate (2,b) $ zip [1] [a],
                               c <- [1..8] \\ [a,b], unrelate (3,c) $ zip [1,2] [a,b],
                               d <- [1..8] \\ [a,b,c], unrelate (4,d) $ zip [1,2,3] [a,b,c],

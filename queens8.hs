@@ -7,7 +7,7 @@
 
 -- This file also contain a set of set of auxiliary functions for detecting and filtering out the dependent solutions.
 
-import Data.List -- just because of \\
+import Data.List 
 
 type Pos = (Int,Int)
 

@@ -1,12 +1,6 @@
 -- The raw solution for the derived problem of placing 1 pown and 9 queens on a 8X8 chessboard so that no two queens 
--- threaten each other.
-
--- There are 64 independant solution and they can be listed by "filterout queens9p". 
-
--- There are 128 dependent solutions. It's about solutions which are basicly same but isometrically transformed (rotation
--- or reflection). They can be listed by "queens9p" function.
-
--- This file also contain a set of set of auxiliary functions for detecting and filtering out the dependent solutions.
+-- threaten each other. There are 16 independant solutions and 128 dependent solutions. This file also contain a set 
+-- of set of auxiliary functions for detecting and filtering out the dependent solutions.
 
 import Data.List 
 

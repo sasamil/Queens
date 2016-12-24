@@ -28,7 +28,7 @@ unrelate y (x:xs) =  if y `diagrelate` x then False else unrelate y xs
 
 -------------------------------------------------------
 -- list of all good permutations
--- (with a<-[1..4] we would get better erformance but only 'lower' 46 of all 92 solutions. 
+-- (with a<-[1..4] we would get better performance but only 'lower' 46 of all 92 solutions. 
 -- It would be correct, anyway i.e. it would yield the same set of independant solutions.)
 perms8 = [[a,b,c,d,e,f,g,h] | a <- [1..8], 
                               b <- [1..8] \\ [a], unrelate (2,b) $ zip [1] [a],

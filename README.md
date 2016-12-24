@@ -1,5 +1,4 @@
 # Queens
-Haskell solution to an old problem
 
 Since Max Bezzel published the eight queens puzzle in 1848 (Berliener Schachzeitung), many matematicians (including Gauss and Dijkstra) have been occupied by it. F. Nauck was the first who offered a complete solution containing 92 dependant possibilities.
 

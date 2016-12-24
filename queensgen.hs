@@ -1,4 +1,12 @@
-import Data.List -- just because of \\
+-- The generalized solution for the old problem of placing N queens on a NXN chessboard 
+-- so that no two queens threaten each other.
+
+-- The dependant solutions can be listed by the "queens n" function. 
+-- The independant solutions can be listed by the "queensind n" function. 
+
+-- This file also contain a set of set of auxiliary functions for detecting and filtering out the dependent solutions.
+
+import Data.List 
 
 type Pos = (Int,Int)
 

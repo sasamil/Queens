@@ -70,8 +70,8 @@ complement chesboard_size x = chesboard_size + 1 - x
 filter90 :: Int -> [Pos] -> [[Pos]] -> [[Pos]]
 filter90 n x = filter (/= rotate90 x)
   where rotate90 [] = []
-        rotate90 (x:xs) = sort $ change90 x : rotate90 xs  -- For pairs, sorting is always in regards to the first member
-        change90 (a,b) = (b, complement n a)               -- That's exactly what we need.
+        rotate90 (x:xs) = sort $ change90 x : rotate90 xs  
+        change90 (a,b) = (b, complement n a)               
 
 
 -------------------------------------------------------
@@ -130,8 +130,8 @@ filterD2 n x = filter (/= mirrord2 x)
 
 -------------------------------------------------------
 -- combine all transformation filters into one superfilter
--- (it doesn't have to be global but I've extracted just to 
--- emphasise the beauty of composition)
+-- (it doesn't have to be global but I've extracted it just 
+-- to emphasise the beauty of composition)
 superfilter :: Int -> [Pos] -> [[Pos]] -> [[Pos]]
 superfilter n x = filter (/=x) . filterD1 n x . filterD2 n x . filterH n x . filterV n x . filter270 n x . filter180 n x . filter90 n x 
 
@@ -143,17 +143,6 @@ filterout [] = []
 filterout (x:[]) = [x]
 filterout ls@(x:xs) = x : superfilter nn x (filterout xs) 
   where nn = length x
-
-
--------------------------------------------------------
--- This is redundant
--- First I had thought that combination of (h/v)mirroring + (90/270)rotation is not covered
--- Later, I realized that diagonal mirrorings cover these possibilities
--- filterout2 :: [[Pos]] -> [[Pos]]
--- filterout2 [] = []
--- filterout2 (x:[]) = [x]
--- filterout2 (x:xs) = x : superfilter y (superfilter x $ filterout xs)
---   where y = chh x
 
 
 -------------------------------------------------------

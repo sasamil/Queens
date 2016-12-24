@@ -1,6 +1,6 @@
 -- The raw solution for the old problem of placing 8 queens on a 8X8 chessboard so that no two queens threaten each other.
 
--- There are 12 independant solution and they can be listed by the "queens8ind" function. 
+-- There are 12 independant solutions and they can be listed by the "queens8ind" function. 
 
 -- There are 92 dependent solutions. It's about solutions which are basicly same but isometrically transformed (rotation
 -- or reflection). They can be listed by "queens8" function.

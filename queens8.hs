@@ -5,7 +5,7 @@
 -- There are 92 dependent solutions. It's about solutions which are basicly same but isometrically transformed (rotation
 -- or reflection). They can be listed by "queens8" function.
 
--- This file also contain a set of set of auxiliary functions for detecting and filtering out the dependent solutions.
+-- This file also contain a set of auxiliary functions for detecting and filtering out the dependent solutions.
 
 import Data.List 
 

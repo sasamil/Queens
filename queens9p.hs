@@ -1,6 +1,6 @@
 -- The raw solution for the derived problem of placing 1 pown and 9 queens on a 8X8 chessboard so that no two queens 
 -- threaten each other. There are 16 independant solutions (queens9pind) and 128 dependent solutions (queens9p). 
--- This file also contain a set of set of auxiliary functions for detecting and filtering out the dependent solutions.
+-- This file also contain a set of auxiliary functions for detecting and filtering out the dependent solutions.
 
 import Data.List 
 

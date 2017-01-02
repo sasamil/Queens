@@ -109,7 +109,7 @@ filterH x = filter (/= mirrorh x)
 
 
 -------------------------------------------------------
--- 11 - 88 diagonal mirrorr
+-- 11 - 88 diagonal mirror
 filterD1 :: [Pos] -> [[Pos]] -> [[Pos]]
 filterD1 x = filter (/= mirrord1 x)
   where mirrord1 [] = []
@@ -117,7 +117,7 @@ filterD1 x = filter (/= mirrord1 x)
         changemd1 (a,b) = (b, a)
 
 -------------------------------------------------------
--- 81 - 18 diagonal mirrorr
+-- 81 - 18 diagonal mirror
 filterD2 :: [Pos] -> [[Pos]] -> [[Pos]]
 filterD2 x = filter (/= mirrord2 x)
   where mirrord2 [] = []

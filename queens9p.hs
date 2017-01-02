@@ -173,7 +173,7 @@ filterH (p,qs) = filter (\(p2,qs2) -> p2 /= changemh p || qs2 /= mirrorh qs)
 
 
 -------------------------------------------------------
--- 11 - 88 diagonal mirrorr
+-- 11 - 88 diagonal mirror
 filterD1 :: Comb -> [Comb] -> [Comb]
 filterD1 (p,qs) = filter (\(p2,qs2) -> p2 /= changemd1 p || qs2 /= mirrord1 qs)
   where mirrord1 [] = []
@@ -182,7 +182,7 @@ filterD1 (p,qs) = filter (\(p2,qs2) -> p2 /= changemd1 p || qs2 /= mirrord1 qs)
 
 
 -------------------------------------------------------
--- 81 - 18 diagonal mirrorr
+-- 81 - 18 diagonal mirror
 filterD2 :: Comb -> [Comb] -> [Comb]
 filterD2 (p,qs) = filter (\(p2,qs2) -> p2 /= changemd2 p || qs2 /= mirrord2 qs)
   where mirrord2 [] = []

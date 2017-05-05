@@ -11,7 +11,7 @@ import Data.List
 type Pos = (Int,Int)
 
 -------------------------------------------------------
--- are two queens in mutually attacking positions
+-- are two queens threatening each other
 -- (last two lines: left and  right diagonal i.e. comparing abs values)
 relate :: Pos -> Pos -> Bool
 relate a b = fst a == fst b || 

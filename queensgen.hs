@@ -66,7 +66,7 @@ complement chesboard_size x = chesboard_size + 1 - x
 
 
 -------------------------------------------------------
--- not rotated for 90 (cw) filter
+-- not rotated for 90 (clockwise) filter
 filter90 :: Int -> [Pos] -> [[Pos]] -> [[Pos]]
 filter90 n x = filter (/= rotate90 x)
   where rotate90 [] = []
@@ -84,7 +84,7 @@ filter180 n x = filter (/= rotate180 x)
 
 
 -------------------------------------------------------
--- not rotated for 270 (cw) filter
+-- not rotated for 270 (clockwise) filter
 filter270 :: Int -> [Pos] -> [[Pos]] -> [[Pos]]
 filter270 n x = filter (/= rotate270 x)
   where rotate270 [] = []
